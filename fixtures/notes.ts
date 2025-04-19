@@ -1,3 +1,6 @@
+import "react-native-get-random-values";
+import { nanoid } from "nanoid";
+
 import { LoremIpsum } from "lorem-ipsum";
 import { Note } from "./model";
 
@@ -19,7 +22,7 @@ const capitalizeFirstLetter = ([first, ...rest]: string) =>
 
 for (let i = 0; i < 100; i++) {
   DATA.push({
-    id: "1",
+    id: nanoid(),
     title: capitalizeFirstLetter(
       lorem.generateWords(Math.round(Math.random() * 10) + 2)
     ),

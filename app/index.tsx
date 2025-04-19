@@ -1,9 +1,14 @@
-import { Box, Text } from "@/atoms";
+import { Container, Text } from "@/atoms";
+import NoteList from "@/atoms/NoteList";
+import HeaderBar from "@/components/HeaderBar";
 
 export default function Index() {
   return (
-    <Box flex={1} justifyContent={"center"} alignItems={"center"}>
-      <Text>Hello world from restyle!</Text>
-    </Box>
+    <Container>
+      <NoteList />
+      <HeaderBar>
+        <Text>header bar</Text>
+      </HeaderBar>
+    </Container>
   );
 }

@@ -8,7 +8,10 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView>
       <ThemeProvider theme={theme}>
-        <Drawer drawerContent={(props) => <Sidebar {...props} />}>
+        <Drawer
+          drawerContent={(props) => <Sidebar {...props} />}
+          screenOptions={{ headerShown: false }}
+        >
           <Drawer.Screen name="index" />
         </Drawer>
       </ThemeProvider>
