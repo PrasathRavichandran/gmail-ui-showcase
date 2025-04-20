@@ -8,7 +8,7 @@ interface HeaderBarProps extends AnimatedBoxProps {
 
 const HeaderBar: React.FC<HeaderBarProps> = ({ children, ...rest }) => {
   return (
-    <AnimatedBox position={"absolute"} top={40} left={0} right={0} {...rest}>
+    <AnimatedBox position={"absolute"} top={0} left={0} right={0} {...rest}>
       <Bar
         variant={"headerBar"}
         flexDirection={"row"}

@@ -2,16 +2,25 @@ import { Box, Container, Text } from "@/atoms";
 import NoteList from "@/atoms/NoteList";
 import TouchableOpacity from "@/atoms/Touchable";
 import HeaderBar from "@/components/HeaderBar";
+import useStickyHeader from "@/hooks/useStickyHeader";
 import FeatherIcon from "@expo/vector-icons/Feather";
 import { useNavigation } from "expo-router";
 import { DrawerProps } from "./_layout";
 
 export default function Index() {
   const navigation = useNavigation<DrawerProps>();
+
+  const {
+    headerBarHeight,
+    handleNoteListLayout,
+    handleScroll,
+    headerBarStyle,
+  } = useStickyHeader();
+
   return (
     <Container>
-      <NoteList />
-      <HeaderBar>
+      <NoteList consentTop={headerBarHeight} onScroll={handleScroll} />
+      <HeaderBar onLayout={handleNoteListLayout} style={headerBarStyle}>
         <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
           <FeatherIcon name="menu" size={22} />
         </TouchableOpacity>
